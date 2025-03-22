@@ -1,4 +1,5 @@
-# Source SDK 2013 Custom Edition
+![Logo](.github/logo.png?raw=true)
+^ SUBJECT TO CHANGE
 
 **Source SDK 2013 Custom Edition** is a fork of Source SDK 2013, which adds support for:
 
