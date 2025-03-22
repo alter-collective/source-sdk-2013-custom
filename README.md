@@ -5,6 +5,7 @@
 
 - HL2 compiling (including Episodic)
 - Portal compiling
+- Counter Strike: Source compiling
 - TBA
 
 ## Build instructions
