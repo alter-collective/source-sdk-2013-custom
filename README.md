@@ -3,6 +3,7 @@
 **Source SDK 2013 Custom Edition** is a fork of Source SDK 2013, which adds support for:
 
 - HL2 compiling (including Episodic)
+- Portal compiling
 - TBA
 
 ## Build instructions
