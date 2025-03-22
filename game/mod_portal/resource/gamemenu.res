@@ -52,12 +52,6 @@
 		"InGameOrder" "70"
 		"ConsoleOnly" "1"
 	}
-	"9"
-	{
-		"label" "#GameUI_GameMenu_ModOptions"
-		"command" "engine ToggleModSettingsPanel"
-		"InGameOrder" "80"
-	}
 	"10"
 	{
 		"label" "#GameUI_GameMenu_Options"

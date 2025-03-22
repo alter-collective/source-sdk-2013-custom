@@ -6,7 +6,7 @@
 	supportsvr	1
 
 	type		singleplayer_only
-	hasportals  1
+	hasportals  	1
 
 	FileSystem
 	{
