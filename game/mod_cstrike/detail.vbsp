@@ -1,0 +1,80 @@
+detail
+{
+	prodgrasses
+	{
+		"density" "2000.0"
+
+		Group1
+		{
+			"alpha" "1.0"
+
+			Model1
+			{
+				"model" "models/props/de_prodigy/prodgrassa.mdl"
+				"amount" "1"
+			}
+
+		}
+		
+		Group2
+		{
+			"alpha" "0.0"
+
+		}
+	}
+compound_gravelgrass
+	{
+		"density" "500.0"
+
+
+		Group1
+		{
+	
+			"alpha" "1.0"
+		}
+		Group2
+		{
+	
+			"alpha" "0.75"
+		}
+		Group2a
+		{
+	
+			"alpha" "0.35"
+			Model1
+			{
+				"sprite" "0 0 128 128 512" 
+				"spritesize" "0.5 0.0 15 25"
+				"spriterandomscale" "0.2"
+				"amount" "0.7"
+				"detailOrientation" "2"
+			}
+		}
+		Group3
+		{
+	
+			"alpha" "0.2"
+			Model1
+			{
+				"sprite" "0 0 128 128 512" 
+				"spritesize" "0.5 0.0 20 35"
+				"spriterandomscale" "0.2"
+				"amount" "0.7"
+				"detailOrientation" "2"
+			}
+		}
+		Group4
+		{
+			"alpha" "0.0"
+			Model1
+			{
+				"sprite" "0 0 128 128 512" 
+				"spritesize" "0.5 0.0 40 45"
+				"spriterandomscale" "0.1"
+				"amount" "0.6"
+				"detailOrientation" "2"
+			}
+		}
+	}
+}
+

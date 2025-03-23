@@ -21,6 +21,7 @@ $Project "client"
 	"game\client\client_episodic.vpc"	[$EPISODIC]
 	"game\client\client_portal.vpc"		[$PORTAL]
 	"game\client\client_cstrike.vpc"	[$CSTRIKE]
+	"game\client\client_dod.vpc"		[$DOD]
 }
 
 $Project "fgdlib"
@@ -36,6 +37,7 @@ $Project "game_shader_generic_example"
 	"materialsystem\stdshaders\game_shader_generic_example_episodic.vpc" [$EPISODIC]
 	"materialsystem\stdshaders\game_shader_generic_example_portal.vpc" [$PORTAL]
 	"materialsystem\stdshaders\game_shader_generic_example_cstrike.vpc" [$CSTRIKE]
+	"materialsystem\stdshaders\game_shader_generic_example_dod.vpc" [$DOD]
 }
 
 // Use this project if you want to override all std shaders with your own.
@@ -48,6 +50,7 @@ $Project "game_shader_generic_std"
 	"materialsystem\stdshaders\game_shader_generic_std_episodic.vpc" [$EPISODIC]
 	"materialsystem\stdshaders\game_shader_generic_std_portal.vpc" [$PORTAL]
 	"materialsystem\stdshaders\game_shader_generic_std_cstrike.vpc" [$CSTRIKE]
+	"materialsystem\stdshaders\game_shader_generic_std_dod.vpc" [$DOD]
 }
 
 $Project "glview"
@@ -68,6 +71,7 @@ $Project "server"
 	"game\server\server_episodic.vpc"	[$EPISODIC]
 	"game\server\server_portal.vpc"		[$PORTAL]
 	"game\server\server_cstrike.vpc"	[$CSTRIKE]
+	"game\server\server_dod.vpc"		[$DOD]
 }
 
 $Project "launcher_main"
@@ -78,6 +82,7 @@ $Project "launcher_main"
 	"launcher_main\launcher_main_mod_episodic.vpc" [$EPISODIC]
 	"launcher_main\launcher_main_mod_portal.vpc" [$PORTAL]
 	"launcher_main\launcher_main_mod_cstrike.vpc" [$CSTRIKE]
+	"launcher_main\launcher_main_mod_dod.vpc" [$DOD]
 }
 
 $Project "mathlib"
