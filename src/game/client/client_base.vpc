@@ -53,9 +53,10 @@ $Configuration
 
 	$Compiler
 	{
-		$AdditionalIncludeDirectories	".\;$BASE;$SRCDIR\vgui2\include;$SRCDIR\vgui2\controls;$SRCDIR\game\shared;.\game_controls;$SRCDIR\thirdparty\sixensesdk\include"
+		$AdditionalIncludeDirectories	".\;$BASE;$SRCDIR\vgui2\include;$SRCDIR\vgui2\controls;$SRCDIR\game\shared;.\game_controls;$SRCDIR\thirdparty\sixensesdk\include;.\gameui;$SRCDIR\common\GameUI;"
 		$PreprocessorDefinitions		"$BASE;NO_STRING_T;CLIENT_DLL;VECTOR;VERSION_SAFE_STEAM_API_INTERFACES;PROTECTED_THINGS_ENABLE;strncpy=use_Q_strncpy_instead;_snprintf=use_Q_snprintf_instead" 
 		$PreprocessorDefinitions		"$BASE;INCLUDED_STEAM2_USERID_STRUCTS" 
+		$PreprocessorDefinitions		"$BASE;GAMEUI_EXPORTS"
 		$PreprocessorDefinitions		"$BASE;fopen=dont_use_fopen" [$WIN32]
 		$PreprocessorDefinitions		"$BASE;USE_WEBM_FOR_REPLAY;" [$LINUXALL]
 		$Create/UsePrecompiledHeader	"Use Precompiled Header (/Yu)"
@@ -73,7 +74,7 @@ $Configuration
 		$SystemFrameworks				"Carbon" [$OSXALL]
 		$SystemLibraries				"rt;z" [$LINUXALL]
 		$IgnoreImportLibrary			"TRUE"
-		$AdditionalDependencies			"$BASE winmm.lib"	[$WINDOWS]
+		$AdditionalDependencies			"$BASE winmm.lib advapi32.lib"	[$WINDOWS]
 		$AdditionalDependencies			"$BASE wsock32.lib Ws2_32.lib" [$BUILD_REPLAY&&$WINDOWS]
 	}
 }
@@ -175,7 +176,7 @@ $Project
 			$File	"$SRCDIR\public\movieobjects\timeutils.h"
 		}
 	}
-		
+	
 	$Folder	"Source Files"
 	{
 		$File	"hl2\C_Func_Monitor.cpp"
@@ -581,6 +582,840 @@ $Project
 						$Create/UsePrecompiledHeader	"Create Precompiled Header (/Yc)"
 					}
 				}
+			}
+		}
+		
+		$Folder "GameUI"
+		{
+			$Folder	"Source Files"
+			{
+				$File	"gameui/BackgroundMenuButton.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/BasePanel.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/GameConsole.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/GameUI_Interface.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/LogoFile.cpp" [!$POSIX]
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/ModInfo.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/MouseMessageForwardingPanel.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"$SRCDIR\common\GameUI\ObjectList.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/PanelListPanel.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/RunGameEngine.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"$SRCDIR\common\GameUI\scriptobject.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/Sys_Utils.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/TextEntryBox.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/TGAImagePanel.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/VGuiSystemModuleLoader.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/BonusMapsDatabase.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/BonusMapsDatabase.h"
+				$File	"$SRCDIR\common\imageutils.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/SaveGameBrowserDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/gameui_util.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/gameui_util.h"
+			}
+
+			$Folder	"Header Files"
+			{
+				$File	"gameui/BackgroundMenuButton.h"
+				$File	"gameui/BasePanel.h"
+				$File	"gameui/BaseSaveGameDialog.h"
+				$File	"gameui/CDKeyEntryDialog.h"
+				$File	"gameui/ChangeGameDialog.h"
+				$File	"gameui/CreateMultiplayerGameBotPage.h"
+				$File	"gameui/CreateMultiplayerGameDialog.h"
+				$File	"gameui/CreateMultiplayerGameGameplayPage.h"
+				$File	"gameui/CreateMultiplayerGameServerPage.h"
+				$File	"gameui/EngineInterface.h"
+				$File	"gameui/GameConsole.h"
+				$File	"gameui/GameUI_Interface.h"
+				$File	"gameui/LoadingDialog.h"
+				$File	"gameui/ModInfo.h"
+				$File	"gameui/MouseMessageForwardingPanel.h"
+				$File	"gameui/PanelListPanel.h"
+				$File	"gameui/Sys_Utils.h"
+				$File	"gameui/TextEntryBox.h"
+				$File	"gameui/TGAImagePanel.h"
+				$File	"gameui/VGuiSystemModuleLoader.h"
+				$File	"gameui/SaveGameBrowserDialog.h"
+			}
+
+			$Folder	"Controls"
+			{
+				$File	"gameui/BitmapImagePanel.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/BitmapImagePanel.h"
+				$File	"gameui/CommandCheckButton.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/CommandCheckButton.h"
+				$File	"gameui/CvarNegateCheckButton.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/CvarNegateCheckButton.h"
+				$File	"$SRCDIR\common\GameUI\cvarslider.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"$SRCDIR\common\GameUI\cvarslider.h"
+				$File	"gameui/CvarTextEntry.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/CvarTextEntry.h"
+				$File	"gameui/CvarToggleCheckButton.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/CvarToggleCheckButton.h"
+				$File	"gameui/HapticControlBox.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/HapticControlBox.h"
+				$File	"gameui/KeyToggleCheckButton.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/KeyToggleCheckButton.h"
+				$File	"gameui/LabeledCommandComboBox.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/LabeledCommandComboBox.h"
+				$File	"gameui/URLButton.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/URLButton.h"
+				$File	"gameui/vcontrolslistpanel.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/vcontrolslistpanel.h"
+			}
+
+			$Folder	"Dialogs"
+			{
+				$File	"gameui/BenchmarkDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/BenchmarkDialog.h"
+				$File	"gameui/BonusMapsDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/BonusMapsDialog.h"
+				$File	"gameui/CommentaryDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/CommentaryDialog.h"
+				$File	"gameui/CommentaryExplanationDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/CommentaryExplanationDialog.h"
+				$File	"gameui/ContentControlDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/ContentControlDialog.h"
+				$File	"gameui/CustomTabExplanationDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/CustomTabExplanationDialog.h"
+				$File	"gameui/GameConsoleDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/GameConsoleDialog.h"
+				$File	"gameui/LoadGameDialog_Xbox.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/LoadGameDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/LoadGameDialog.h"
+				$File	"gameui/MultiplayerAdvancedDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/MultiplayerAdvancedDialog.h"
+				$File	"gameui/NewGameDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/NewGameDialog.h"
+				$File	"gameui/PlayerListDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/PlayerListDialog.h"
+				$File	"gameui/SaveGameDialog_Xbox.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/SaveGameDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/SaveGameDialog.h"
+				$File	"gameui/LoadCommentaryDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/LoadingDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/BaseSaveGameDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/ChangeGameDialog.cpp" [!$POSIX]
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/CreateMultiplayerGameBotPage.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/CreateMultiplayerGameDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/CreateMultiplayerGameGameplayPage.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/CreateMultiplayerGameServerPage.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/OptionsDialog_Xbox.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/ControllerDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/ControllerDialog.h"
+			}
+
+			$Folder	"Matchmaking"
+			{
+				$File	"gameui/matchmaking/achievementsdialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/matchmaking/achievementsdialog.h"
+				$File	"gameui/matchmaking/basedialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/matchmaking/basedialog.h"
+				$File	"gameui/matchmaking/dialogmenu.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/matchmaking/dialogmenu.h"
+				$File	"gameui/matchmaking/leaderboarddialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/matchmaking/leaderboarddialog.h"
+				$File	"gameui/matchmaking/matchmakingbasepanel.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/matchmaking/matchmakingbasepanel.h"
+				$File	"gameui/matchmaking/pausedialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/matchmaking/pausedialog.h"
+				$File	"gameui/matchmaking/sessionlobbydialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/matchmaking/sessionlobbydialog.h"
+				$File	"gameui/matchmaking/sessionoptionsdialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/matchmaking/sessionoptionsdialog.h"
+				$File	"gameui/matchmaking/sessionbrowserdialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/matchmaking/sessionbrowserdialog.h"
+				$File	"gameui/matchmaking/welcomedialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/matchmaking/welcomedialog.h"
+			}
+
+			$Folder	"Options Dialog"
+			{
+				$File	"gameui/OptionsDialog.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/OptionsDialog.h"
+				$File	"gameui/OptionsSubAudio.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/OptionsSubAudio.h"
+				$File	"gameui/OptionsSubDifficulty.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/OptionsSubDifficulty.h"
+				$File	"gameui/OptionsSubGame.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/OptionsSubGame.h"
+				$File	"gameui/OptionsSubKeyboard.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/OptionsSubKeyboard.h"
+				$File	"gameui/OptionsSubMouse.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/OptionsSubMouse.h"
+				$File	"gameui/OptionsSubMultiplayer.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/OptionsSubMultiplayer.h"
+				$File	"gameui/OptionsSubPortal.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/OptionsSubPortal.h"
+				$File	"gameui/OptionsSubVideo.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/OptionsSubVideo.h"
+				$File	"gameui/OptionsSubVoice.cpp"
+				{
+					$Configuration
+					{
+						$Compiler
+						{
+							$Create/UsePrecompiledHeader	"Not Using Precompiled Headers"
+						}
+					}
+				}
+				$File	"gameui/OptionsSubVoice.h"
 			}
 		}
 
@@ -1266,6 +2101,9 @@ $Project
 		$Lib		tier3
 		$Lib		vgui_controls
 		$Lib		vtf
+
+		$Lib  	"$LIBCOMMON/jpeglib"
+		$Lib 	"$LIBCOMMON/libspng"
 
 		$ImpLibexternal steam_api	[!$WIN64]
 		$ImpLibexternal steam_api64	[$WIN64]

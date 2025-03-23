@@ -130,6 +130,8 @@
 
 #include "secure_command_line.h"
 
+#include "GameUI_Interface.h"
+
 // NVNT includes
 #include "hud_macros.h"
 #include "haptics/ihaptics.h"
@@ -149,7 +151,6 @@
 #include "econ/tool_items/custom_texture_cache.h"
 
 #endif
-
 
 extern vgui::IInputInternal *g_InputInternal;
 
@@ -1183,6 +1184,13 @@ void CHLClient::PostInit()
 		}
 	}
 #endif
+
+	if ( gameuifuncs )
+		gameuifuncs = nullptr;
+
+	factorylist_t Factories;
+	FactoryList_Retrieve( Factories );
+	GameUI().Initialize( Factories.appSystemFactory );
 
 	if ( !r_lightmap_bicubic_set.GetBool() && materials )
 	{
