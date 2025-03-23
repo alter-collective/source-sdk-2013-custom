@@ -5,7 +5,8 @@
 //-----------------------------------------------------------------------------
 
 $Macro SRCDIR		"..\.."
-$Macro GAMENAME 	"lostcoast"
+$Macro GAMENAME 	"lostcoast" [!$SOURCESDK]
+$Macro GAMENAME 	"mod_lostcoast" [$SOURCESDK]
 
 $Include "$SRCDIR\game\client\client_base.vpc"
 
@@ -14,7 +15,7 @@ $Configuration
 	$Compiler
 	{
 		$AdditionalIncludeDirectories		"$BASE;hl2,.\hl2\elements,$SRCDIR\game\shared\hl2"
-		$PreprocessorDefinitions			"$BASE;HL2_CLIENT_DLL;HL2_LOSTCOAST"
+		$PreprocessorDefinitions			"$BASE;HL2_CLIENT_DLL;HL2_LOSTCOAST;NEXT_BOT"
 	}
 }
 
@@ -25,6 +26,12 @@ $Project "Client (LostCoast)"
 		$File	"hud_chat.cpp"
 		$File	"c_team_objectiveresource.cpp"
 		$File	"c_team_objectiveresource.h"
+
+		$Folder	"NextBot"
+ 		{
+ 			$File	"NextBot\C_NextBot.cpp"
+ 			$File	"NextBot\C_NextBot.h"
+ 		}
 
 		$Folder	"HL2 DLL"
 		{

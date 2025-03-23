@@ -15,7 +15,7 @@ $Configuration
 	$Compiler
 	{
 		$AdditionalIncludeDirectories		"$BASE;dod,.\dod\VGUI,$SRCDIR\game\shared\dod"
-		$PreprocessorDefinitions			"$BASE;DOD_DLL;ENABLE_HTML_WINDOW"
+		$PreprocessorDefinitions			"$BASE;DOD_DLL;ENABLE_HTML_WINDOW;NEXT_BOT"
 	}
 }
 
@@ -31,6 +31,12 @@ $Project "Client (DOD)"
 
 		$File	"$SRCDIR\game\shared\playerclass_info_parse.cpp"
 		$File	"$SRCDIR\game\shared\playerclass_info_parse.h"
+
+		$Folder	"NextBot"
+ 		{
+ 			$File	"NextBot\C_NextBot.cpp"
+ 			$File	"NextBot\C_NextBot.h"
+ 		}
 
 		$Folder	"Day of Defeat DLL"
 		{

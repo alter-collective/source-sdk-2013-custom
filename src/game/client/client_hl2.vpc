@@ -16,7 +16,7 @@ $Configuration
 	$Compiler
 	{
 		$AdditionalIncludeDirectories	".\hl2;.\hl2\elements;$SRCDIR\game\shared\hl2;$BASE"
-		$PreprocessorDefinitions		"$BASE;HL2_CLIENT_DLL"
+		$PreprocessorDefinitions		"$BASE;HL2_CLIENT_DLL;NEXT_BOT"
 	}
 }
 
@@ -27,6 +27,12 @@ $Project "Client (HL2)"
 		$File	"hud_chat.cpp"
 		$File	"c_team_objectiveresource.cpp"
 		$File	"c_team_objectiveresource.h"
+
+		$Folder	"NextBot"
+ 		{
+ 			$File	"NextBot\C_NextBot.cpp"
+ 			$File	"NextBot\C_NextBot.h"
+ 		}
 
 		$Folder	"HL2 DLL"
 		{
