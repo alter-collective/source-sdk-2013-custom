@@ -3,7 +3,7 @@
 	game 		"My First Portal Mod"
 	title 		"Portal"
 	title2		""
-	supportsvr	1
+	supportsvr	0
 
 	type		singleplayer_only
 	hasportals  	1

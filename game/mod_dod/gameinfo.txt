@@ -8,7 +8,8 @@
 	nohimodel 1
 	nocrosshair 1
 	advcrosshair 2
-	supportsvr 1
+	nodegraph 0
+	supportsvr	0
 
 	hidden_maps
 	{

@@ -10,7 +10,8 @@
 	bots 1
 	advcrosshair 3
 	nodegraph 0
-	supportsvr	1
+	supportsvr	0
+
 	hidden_maps
 	{
 		"test_speakers"		1

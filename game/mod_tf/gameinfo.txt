@@ -15,7 +15,7 @@
 	AdditionalLocalization	"tf"
 	InstancePath			"maps/instances/"
 	advcrosshair 			1
-	supportsvr				0
+	supportsvr			0
 	ReplayRequired 			1
 
 	DependsOnAppID 			440
