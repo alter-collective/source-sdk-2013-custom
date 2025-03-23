@@ -10,6 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Configure dependencies
+      uses: ilammy/msvc-dev-cmd@v1
+
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
 
@@ -24,4 +27,4 @@ jobs:
       run: ./devtools/fixsln.sh everything.sln
 
     - name: Build
-      run: cd src; msbuild everything.sln /p:Configuration=Release
+      run: cd src; devenv everything.sln /Build Release
