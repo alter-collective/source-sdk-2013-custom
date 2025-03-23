@@ -13,9 +13,6 @@ jobs:
     - name: Configure dependencies
       uses: ilammy/msvc-dev-cmd@v1
 
-    - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
-
     - run: REG IMPORT .github/workflows/DefaultProjectExtension.reg
 
     - working-directory: ./src
