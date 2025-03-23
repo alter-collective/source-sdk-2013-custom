@@ -1,0 +1,1 @@
+this folder contains the mapsrc's of the Source SDK app in steam. they were just put here for easier access
