@@ -3,7 +3,7 @@
 
 **Source SDK 2013 Custom Edition** is a fork of Source SDK 2013, which adds support for:
 
-- Multiple games compiling (HL2, EP1/EP2, CSS, DOD, Portal)
+- Multiple games compiling (HL2, EP1/EP2, CSS, DOD, Portal, HL1/HL1MP, Lost Coast)
 - TBA
 
 ## Build instructions
