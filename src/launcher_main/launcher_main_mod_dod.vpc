@@ -12,7 +12,7 @@ $Configuration
 	}
 }
 
-$Project "Launcher Main (DOD)"
+$Project "Launcher Main (Mod DOD)"
 {
     $Folder "Resource Files" [$WINDOWS]
     {

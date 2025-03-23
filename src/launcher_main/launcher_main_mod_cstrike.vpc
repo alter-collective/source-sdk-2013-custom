@@ -12,7 +12,7 @@ $Configuration
 	}
 }
 
-$Project "Launcher Main (CStrike)"
+$Project "Launcher Main (Mod CStrike)"
 {
     $Folder "Resource Files" [$WINDOWS]
     {

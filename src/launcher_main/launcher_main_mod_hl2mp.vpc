@@ -17,6 +17,6 @@ $Project "Launcher Main (Mod HL2MP)"
     $Folder "Resource Files" [$WINDOWS]
     {
         $File   "launcher_main_mod_hl2mp.rc"
-        $File   "res\mod_hl2mp.ico"
+        $File   "res\mod_hl2.ico"
     }
 }
