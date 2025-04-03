@@ -79,11 +79,11 @@ void CWeaponSDKMelee::ItemPostFrame( void )
 	if ( pPlayer == NULL )
 		return;
 
-	if ( (pPlayer->m_nButtons & IN_ATTACK) && (m_flNextPrimaryAttack <= gpGlobals->curtime) && pPlayer->CanAttack() )
+	if ( (pPlayer->m_nButtons & IN_ATTACK) && (m_flNextPrimaryAttack <= gpGlobals->curtime) )
 	{
 		PrimaryAttack();
 	} 
-	else if ( (pPlayer->m_nButtons & IN_ATTACK2) && (m_flNextSecondaryAttack <= gpGlobals->curtime) && pPlayer->CanAttack() )
+	else if ( (pPlayer->m_nButtons & IN_ATTACK2) && (m_flNextSecondaryAttack <= gpGlobals->curtime) )
 	{
 		SecondaryAttack();
 	}
@@ -354,7 +354,7 @@ void CWeaponSDKMelee::Swing( int bIsSecondary )
 	// Send the anim
 	SendWeaponAnim( nHitActivity );
 
-	pOwner->DoAnimationEvent( PLAYERANIMEVENT_ATTACK_PRIMARY );
+	pOwner->DoAnimationEvent( PLAYERANIMEVENT_FIRE_GUN_PRIMARY );
 
 	//Setup our next attack times
 	m_flNextPrimaryAttack = gpGlobals->curtime + GetFireRate();

@@ -30,6 +30,8 @@
 #include "text_message.h"
 #include "panelmetaclassmgr.h"
 
+// memdbgon must be the last include file in a .cpp file!!!
+#include "tier0/memdbgon.h"
 
 ConVar default_fov( "default_fov", "90", FCVAR_CHEAT );
 

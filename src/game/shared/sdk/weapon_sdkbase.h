@@ -35,6 +35,9 @@ typedef enum
 	WEAPON_MP5,
 	WEAPON_SHOTGUN,
 	WEAPON_GRENADE,
+
+	WEAPON_CROWBAR,
+	WEAPON_PISTOL,
 	
 	WEAPON_MAX,		// number of weapons weapon index
 } SDKWeaponID;

@@ -9,6 +9,9 @@
 #include "shake.h"
 #include "voice_gamemgr.h"
 
+// memdbgon must be the last include file in a .cpp file!!!
+#include "tier0/memdbgon.h"
+
 void RegisterUserMessages()
 {
 	usermessages->Register( "Geiger", 1 );		// geiger info data
@@ -25,6 +28,7 @@ void RegisterUserMessages()
 	usermessages->Register( "Fade", 10 );	// fade HUD in/out
 	usermessages->Register( "VGUIMenu", -1 );	// Show VGUI menu
 	usermessages->Register( "CloseCaption", -1 ); // Show a caption (by string id number)(duration in 10th of a second)
+	usermessages->Register( "Rumble", 3 );	// Send a rumble to a controller
 
 	usermessages->Register( "SendAudio", -1 );	// play radion command
 

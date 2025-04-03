@@ -11,7 +11,6 @@
 #include "KeyValues.h"
 #include "weapon_sdkbase.h"
 
-
 #ifdef CLIENT_DLL
 
 
@@ -26,6 +25,7 @@
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
+ConVar	sk_plr_dmg_grenade( "sk_plr_dmg_grenade", "0", FCVAR_REPLICATED );
 
 #ifndef CLIENT_DLL
 LINK_ENTITY_TO_CLASS(info_player_terrorist, CPointEntity);
@@ -81,7 +81,9 @@ IMPLEMENT_NETWORKCLASS_ALIASED( SDKGameRulesProxy, DT_SDKGameRulesProxy )
 	class CVoiceGameMgrHelper : public IVoiceGameMgrHelper
 	{
 	public:
-		virtual bool		CanPlayerHearPlayer( CBasePlayer *pListener, CBasePlayer *pTalker )
+		virtual				~CVoiceGameMgrHelper() {}
+
+		virtual bool		CanPlayerHearPlayer(CBasePlayer *pListener, CBasePlayer *pTalker, bool &bProximity )
 		{
 			// Dead players can only be heard by other dead team mates
 			if ( pTalker->IsAlive() == false )
@@ -292,7 +294,7 @@ bool CSDKGameRules::ShouldCollide( int collisionGroup0, int collisionGroup1 )
 	if ( collisionGroup0 > collisionGroup1 )
 	{
 		// swap so that lowest is always first
-		swap(collisionGroup0,collisionGroup1);
+		std::swap(collisionGroup0,collisionGroup1);
 	}
 	
 	//Don't stand on COLLISION_GROUP_WEAPON

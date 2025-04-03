@@ -134,25 +134,6 @@ extern const char *pszTeamNames[];
 #define SDK_DEFAULT_PLAYER_SPRINTSPEED		330
 #define SDK_DEFAULT_PLAYER_PRONESPEED		50
 
-//--------------------------------------------------------------------------------------------------------
-//
-// Weapon IDs for all SDK Game weapons
-//
-typedef enum
-{
-	WEAPON_NONE = 0,
-
-	SDK_WEAPON_NONE = WEAPON_NONE,
-	SDK_WEAPON_MP5,
-	SDK_WEAPON_SHOTGUN,
-	SDK_WEAPON_GRENADE,
-	SDK_WEAPON_PISTOL,
-	SDK_WEAPON_CROWBAR,
-
-	
-	WEAPON_MAX,		// number of weapons weapon index
-} SDKWeaponID;
-
 typedef enum
 {
 	FM_AUTOMATIC = 0,

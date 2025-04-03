@@ -22,6 +22,8 @@
 
 #endif
 
+// memdbgon must be the last include file in a .cpp file!!!
+#include "tier0/memdbgon.h"
 
 // ----------------------------------------------------------------------------- //
 // Global functions.
@@ -34,6 +36,8 @@ static const char * s_WeaponAliasInfo[] =
 	"mp5",		// WEAPON_MP5
 	"shotgun",	// WEAPON_SHOTGUN
 	"grenade",	// WEAPON_GRENADE
+	"crowbar",	// WEAPON_CROWBAR
+	"pistol",	// WEAPON_PISTOL
 	NULL,		// WEAPON_NONE
 };
 

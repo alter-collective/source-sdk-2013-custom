@@ -24,6 +24,9 @@
 	#include "sdk_player.h"
 #endif
 
+// memdbgon must be the last include file in a .cpp file!!!
+#include "tier0/memdbgon.h"
+
 #define ANIM_TOPSPEED_WALK			100
 #define ANIM_TOPSPEED_RUN			250
 #define ANIM_TOPSPEED_RUN_CROUCH	85

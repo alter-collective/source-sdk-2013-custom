@@ -8,13 +8,17 @@
 #include "c_sdk_player.h"
 #include "weapon_sdkbase.h"
 #include "c_basetempentity.h"
+#include "c_weapon__stubs.h"
 
 #if defined( CSDKPlayer )
 	#undef CSDKPlayer
 #endif
 
+// memdbgon must be the last include file in a .cpp file!!!
+#include "tier0/memdbgon.h"
 
-
+// Moon: Client missing DT class CWeaponCycler fix
+STUB_WEAPON_CLASS( cycler_weapon, WeaponCycler, C_BaseCombatWeapon );
 
 // -------------------------------------------------------------------------------- //
 // Player animation event. Sent to the client when a player fires, jumps, reloads, etc..

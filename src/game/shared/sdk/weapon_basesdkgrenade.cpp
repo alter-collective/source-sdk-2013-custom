@@ -24,6 +24,8 @@
 
 #endif
 
+// memdbgon must be the last include file in a .cpp file!!!
+#include "tier0/memdbgon.h"
 
 #define GRENADE_TIMER	1.5f //Seconds
 

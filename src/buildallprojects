@@ -24,7 +24,7 @@ fi
 solution_out="_vpc_/ninja/sdk_everything_$VPC_NINJA_BUILD_MODE"
 
 if [[ ! -e "$solution_out.ninja" ]]; then
-    devtools/bin/vpc /hl2 /episodic /portal /hl2mp /tf /linux64 /ninja /define:SOURCESDK +everything /mksln "$solution_out"
+    devtools/bin/vpc /hl2 /episodic /lostcoast /portal /cstrike /dod /hl1 /hl1mp /hl2mp /tf /sdk /linux64 /ninja /define:SOURCESDK +everything /mksln "$solution_out"
 
     # Generate compile commands.
     ninja -f "$solution_out.ninja" -t compdb > compile_commands.json

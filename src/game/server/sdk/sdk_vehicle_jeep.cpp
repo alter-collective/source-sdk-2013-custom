@@ -378,7 +378,7 @@ void CPropJeep::TraceAttack( const CTakeDamageInfo &inputInfo, const Vector &vec
 		}
 	}
 
-	BaseClass::TraceAttack( info, vecDir, ptr );
+	BaseClass::TraceAttack( info, vecDir, ptr, NULL );
 }
 
 //-----------------------------------------------------------------------------
@@ -1566,7 +1566,7 @@ int CJeepFourWheelServerVehicle::GetExitAnimToUse( Vector &vecEyeExitEndpoint, b
 		QAngle vehicleExitAngles;
 
 		// Ensure the endpoint is clear by dropping a point down from above
-		pAnimating->GetAttachment( m_ExitAnimations[0].iAttachment, vehicleExitOrigin, vehicleExitAngles );
+		pAnimating->GetAttachment( m_ExitAnimations[0].bUpright, vehicleExitOrigin, vehicleExitAngles );
 		vehicleExitOrigin -= VEC_VIEW;
 		Vector vecMove = Vector(0,0,64);
 		Vector vecStart = vehicleExitOrigin + vecMove;

@@ -25,6 +25,7 @@ $Project "client"
 	"game\client\client_hl1.vpc"		[$HL1]
 	"game\client\client_hl1mp.vpc"		[$HL1MP]
 	"game\client\client_lostcoast.vpc"	[$LOSTCOAST]
+	"game\client\client_sdk.vpc"		[$SDK]
 }
 
 $Project "fgdlib"
@@ -44,6 +45,7 @@ $Project "game_shader_generic_example"
 	"materialsystem\stdshaders\game_shader_generic_example_hl1.vpc" [$HL1]
 	"materialsystem\stdshaders\game_shader_generic_example_hl1mp.vpc" [$HL1MP]
 	"materialsystem\stdshaders\game_shader_generic_example_lostcoast.vpc" [$LOSTCOAST]
+	"materialsystem\stdshaders\game_shader_generic_example_sdk.vpc" [$SDK]
 }
 
 // Use this project if you want to override all std shaders with your own.
@@ -60,6 +62,7 @@ $Project "game_shader_generic_std"
 	"materialsystem\stdshaders\game_shader_generic_std_hl1.vpc" [$HL1]
 	"materialsystem\stdshaders\game_shader_generic_std_hl1mp.vpc" [$HL1MP]
 	"materialsystem\stdshaders\game_shader_generic_std_lostcoast.vpc" [$LOSTCOAST]
+	"materialsystem\stdshaders\game_shader_generic_std_sdk.vpc" [$SDK]
 }
 
 $Project "glview"
@@ -84,20 +87,22 @@ $Project "server"
 	"game\server\server_hl1.vpc"		[$HL1]
 	"game\server\server_hl1mp.vpc"		[$HL1MP]
 	"game\server\server_lostcoast.vpc"	[$LOSTCOAST]
+	"game\server\server_sdk.vpc"		[$SDK]
 }
 
 $Project "launcher_main"
 {
-	"launcher_main\launcher_main_mod_hl2.vpc" [$HL2]
-	"launcher_main\launcher_main_mod_hl2mp.vpc" [$HL2MP]
-	"launcher_main\launcher_main_mod_tf.vpc" [$TF]
-	"launcher_main\launcher_main_mod_episodic.vpc" [$EPISODIC]
-	"launcher_main\launcher_main_mod_portal.vpc" [$PORTAL]
-	"launcher_main\launcher_main_mod_cstrike.vpc" [$CSTRIKE]
-	"launcher_main\launcher_main_mod_dod.vpc" [$DOD]
-	"launcher_main\launcher_main_mod_hl1.vpc" [$HL1]
-	"launcher_main\launcher_main_mod_hl1mp.vpc" [$HL1MP]
+	"launcher_main\launcher_main_mod_hl2.vpc" 		[$HL2]
+	"launcher_main\launcher_main_mod_hl2mp.vpc" 	[$HL2MP]
+	"launcher_main\launcher_main_mod_tf.vpc"		[$TF]
+	"launcher_main\launcher_main_mod_episodic.vpc" 	[$EPISODIC]
+	"launcher_main\launcher_main_mod_portal.vpc" 	[$PORTAL]
+	"launcher_main\launcher_main_mod_cstrike.vpc" 	[$CSTRIKE]
+	"launcher_main\launcher_main_mod_dod.vpc" 		[$DOD]
+	"launcher_main\launcher_main_mod_hl1.vpc" 		[$HL1]
+	"launcher_main\launcher_main_mod_hl1mp.vpc" 	[$HL1MP]
 	"launcher_main\launcher_main_mod_lostcoast.vpc" [$LOSTCOAST]
+	"launcher_main\launcher_main_sdk.vpc"			[$SDK]
 }
 
 $Project "mathlib"

@@ -13,6 +13,9 @@
 #include "iservervehicle.h"
 #include "viewport_panel_names.h"
 
+// memdbgon must be the last include file in a .cpp file!!!
+#include "tier0/memdbgon.h"
+
 extern int gEvilImpulse101;
 
 ConVar sv_motd_unload_on_dismissal( "sv_motd_unload_on_dismissal", "0", 0, "If enabled, the MOTD contents will be unloaded when the player closes the MOTD." );
@@ -63,7 +66,7 @@ void TE_PlayerAnimEvent( CBasePlayer *pPlayer, PlayerAnimEvent_t event, int nDat
 // Tables.
 // -------------------------------------------------------------------------------- //
 BEGIN_DATADESC( CSDKPlayer )
-DEFINE_THINKFUNC( SDKPushawayThink ),
+//DEFINE_THINKFUNC( SDKPushawayThink ),
 END_DATADESC()
 
 LINK_ENTITY_TO_CLASS( player, CSDKPlayer );
@@ -145,7 +148,7 @@ CSDKPlayer::CSDKPlayer()
 	UseClientSideAnimation();
 	m_angEyeAngles.Init();
 
-	SetViewOffset( SDK_PLAYER_VIEW_OFFSET );
+//	SetViewOffset( SDK_PLAYER_VIEW_OFFSET );
 
 	m_iThrowGrenadeCounter = 0;
 }

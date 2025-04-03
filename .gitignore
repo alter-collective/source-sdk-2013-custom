@@ -506,6 +506,8 @@ FodyWeavers.xsd
 # Custom Edition
 mod_*_win64.exe
 mod_*.exe
+sdk_*.exe
+sdk_*_win64.exe
 
 platform/
 steam_appid.txt

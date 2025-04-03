@@ -21,6 +21,9 @@
 #include "effect_dispatch_data.h"
 #include "engine/ivdebugoverlay.h"
 
+// memdbgon must be the last include file in a .cpp file!!!
+#include "tier0/memdbgon.h"
+
 ConVar sv_showimpacts("sv_showimpacts", "0", FCVAR_REPLICATED, "Shows client (red) and server (blue) bullet impact point" );
 
 void DispatchEffect( const char *pName, const CEffectData &data );
